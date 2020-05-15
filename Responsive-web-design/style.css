@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+}
+
+.contenedor{
+    width:100%;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 3px dashed skyblue;
+
+    display: grid;
+    grid-gap: 3px;
+    grid-template-areas: "header header header header"
+                        "item-1 item-2 item-3 aside"
+                        "item-1 item-2 item-3 aside"
+                        "footer footer footer footer";
+    grid-template-rows: repeat(4,100px);
+}
+
+.elem{
+    background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    grid-column: header;
+    grid-row: header;
+    background-color: brown;
+}
+
+.item-1{
+    grid-column: item-1;
+    grid-row: item-1;
+}
+
+.item-2{
+    grid-column: item-2;
+    grid-row: item-2;
+}
+
+.item-3{
+    grid-column: item-3;
+    grid-row: item-3;
+}
+
+.aside{
+    grid-column: aside;
+    grid-row: aside;
+    background-color: burlywood;
+}
+
+.footer{
+    grid-column: footer;
+    grid-row: footer;
+    background-color: chartreuse;
+}
+
+@media only screen and (max-width:800px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                            "item-1 item-1 aside"
+                            "item-1 item-1 aside"
+                            "item-2 item-2 aside"
+                            "item-2 item-2 aside"
+                            "item-3 item-3 aside"
+                            "item-3 item-3 aside"
+                            "footer footer footer";
+        grid-template-rows: repeat(8,50px);
+    }
+}
+
+@media (max-width:450px){
+    .contenedor{
+        grid-template-areas: "header header header"
+                            "item-1 item-1 item-1"
+                            "item-1 item-1 item-1"
+                            "item-2 item-2 item-2"
+                            "item-2 item-2 item-2"
+                            "item-3 item-3 item-3"
+                            "item-3 item-3 item-3"
+                            "footer footer footer";
+        grid-template-rows: repeat(8,50px);
+    }
+    .aside{
+        display: none;
+    }
+}
